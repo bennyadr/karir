@@ -1,0 +1,6 @@
+Catatan Perbaikan System STIKOM CKI
+1. Menambahkan : field Shift dan Bukan Shift ( Form Mahasiswa )
+2. Update KRS ( Paket dan Konversi ) + Kelas 
+3. Buat Daftar Ulang
+4. Buat Fitur kirim password
+5. Menambahkan : status mahasiswa

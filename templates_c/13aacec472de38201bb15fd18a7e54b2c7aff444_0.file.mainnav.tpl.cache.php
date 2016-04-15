@@ -1,0 +1,77 @@
+<?php /* Smarty version 3.1.27, created on 2016-04-15 19:40:15
+         compiled from "C:\xampp\htdocs\karir\templates\mainnav.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:226605711277f004906_44057563%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '13aacec472de38201bb15fd18a7e54b2c7aff444' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\karir\\templates\\mainnav.tpl',
+      1 => 1460623783,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '226605711277f004906_44057563',
+  'variables' => 
+  array (
+    'statuslogin' => 0,
+    'samping' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_5711277f163ac0_93556165',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5711277f163ac0_93556165')) {
+function content_5711277f163ac0_93556165 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '226605711277f004906_44057563';
+?>
+<!-- Main navigation -->
+<?php if ($_smarty_tpl->tpl_vars['statuslogin']->value == "0") {?>
+				<ul class="navigation">				
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "1") {?> class="active" <?php }?>><a href="index.php?action=home"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "2") {?> class="active" <?php }?>><a href="profile.php"><span>Profile</span> <i class="icon-profile"></i></a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "3") {?> class="active" <?php }?>><a href="ukur.php"><span>Pengukuran Kompetensi</span> <i class="icon-clipboard"></i></a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "4") {?> class="active" <?php }?>><a href="seepayroll.php"><span>Payroll</span> <i class="icon-accessibility"></i></a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "5") {?> class="active" <?php }?>><a href="password.php"><span>Change Password</span> <i class="icon-users"></i></a></li>
+					<li><a href="index.php?action=logout"><span>Logout</span> <i class="icon-exit"></i></a></li>
+				</ul>
+<?php } else { ?>
+				<ul class="navigation">				
+					<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "1") {?> class="active" <?php }?>><a href="index.php?action=showmenu"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+					<li><a href="#"><span>Master</span> <i class="icon-accessibility"></i></a>
+					<ul>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "21") {?> class="active" <?php }?>><a href="employee.php">Database Pegawai</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "22") {?> class="active" <?php }?>><a href="pendidikan.php">Pendidikan</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "23") {?> class="active" <?php }?>><a href="eselon.php">Eselon</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "24") {?> class="active" <?php }?>><a href="unitkerja.php">Unit Kerja</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "25") {?> class="active" <?php }?>><a href="jabatan.php">Jabatan</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "26") {?> class="active" <?php }?>><a href="kelompok.php">Kelompok Jabatan</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "27") {?> class="active" <?php }?>><a href="tingkat.php">Tingkat Jabatan</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "28") {?> class="active" <?php }?>><a href="kamus.php">Kamus Kompetensi</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "29") {?> class="active" <?php }?>><a href="matrik.php">Matrik Kompetensi</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "30") {?> class="active" <?php }?>><a href="arah.php">Arah Karir</a></li>
+					</ul>
+					</li>
+					<li><a href="#"><span>Karir</span> <i class="icon-clipboard"></i></a>
+					<ul>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "31") {?> class="active" <?php }?>><a href="kompetensi.php">Kompetensi Jabatan</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "32") {?> class="active" <?php }?>><a href="ukur.php">Pengukuran Kompetensi Pegawai</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "33") {?> class="active" <?php }?>><a href="hasilkompetensi.php">Hasil Pengukuran Kompetensi</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "34") {?> class="active" <?php }?>><a href="kinerja.php">Kinerja Pegawai</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "35") {?> class="active" <?php }?>><a href="peluangkarir.php">Peluang Karir (Jabatan)</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "36") {?> class="active" <?php }?>><a href="posjbtkosong.php">Posisi Jabatan Kosong</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "37") {?> class="active" <?php }?>><a href="peljabpeg.php">Peluang Karir Pegawai</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['samping']->value == "38") {?> class="active" <?php }?>><a href="calpemegangjab.php">Calon Pemegang Jabatan</a></li>
+					</ul>
+					</li>
+					
+					<li><a href="index.php?action=logout"><span>Logout</span> <i class="icon-exit"></i></a></li>
+				</ul>				
+<?php }?>
+				<!-- /main navigation --><?php }
+}
+?>

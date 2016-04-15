@@ -1,0 +1,44 @@
+<?php /* Smarty version 3.1.27, created on 2016-03-03 08:46:26
+         compiled from "C:\xampp\htdocs\sip\templates\pengelola.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:1137056d7ebd25cb922_65519970%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '0c8ea50e9a5ac91fe80a6d56e761b1087c9f50af' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\sip\\templates\\pengelola.tpl',
+      1 => 1456301558,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1137056d7ebd25cb922_65519970',
+  'variables' => 
+  array (
+    'username' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_56d7ebd25dbde6_32849233',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_56d7ebd25dbde6_32849233')) {
+function content_56d7ebd25dbde6_32849233 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '1137056d7ebd25cb922_65519970';
+?>
+				<!-- User dropdown -->
+				<div class="user-menu dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="images/admin.png">
+						<div class="user-info">
+							Pengelola Website <span><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</span>
+						</div>
+					</a>
+					
+				</div>
+				<!-- /user dropdown --><?php }
+}
+?>

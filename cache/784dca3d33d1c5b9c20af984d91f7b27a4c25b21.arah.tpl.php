@@ -1,5 +1,5 @@
 <?php
-/*%%SmartyHeaderCode:13220570dc64b07e137_16990734%%*/
+/*%%SmartyHeaderCode:5015711869ed71b40_98983979%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -7,41 +7,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '784dca3d33d1c5b9c20af984d91f7b27a4c25b21' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\arah.tpl',
-      1 => 1459241087,
+      1 => 1460766053,
       2 => 'file',
     ),
     'c35f576cdadeaf749e52d9c4f71f8b8e386d3203' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\header.tpl',
-      1 => 1460354985,
+      1 => 1460766054,
       2 => 'file',
     ),
     '2527243d118472ae5b699e4cc0b8e1f892cbf895' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\pengelola.tpl',
-      1 => 1456301560,
+      1 => 1460766054,
       2 => 'file',
     ),
     '13aacec472de38201bb15fd18a7e54b2c7aff444' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\mainnav.tpl',
-      1 => 1460516893,
+      1 => 1460766054,
       2 => 'file',
     ),
     'de2b6711481e58d8ed9cdc4d37d7abac51ab1f6b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\breadcrumb.tpl',
-      1 => 1459824448,
+      1 => 1460766053,
       2 => 'file',
     ),
     'e1e3a632bcaaa5aac4ab979dfc088b7095e354f3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\footer.tpl',
-      1 => 1453872114,
+      1 => 1460766054,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13220570dc64b07e137_16990734',
+  'nocache_hash' => '5015711869ed71b40_98983979',
   'tpl_function' => 
   array (
   ),
@@ -51,12 +51,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_570dc64bdea473_44512149',
+  'unifunc' => 'content_5711869f180f51_72540647',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_570dc64bdea473_44512149')) {
-function content_570dc64bdea473_44512149 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711869f180f51_72540647')) {
+function content_5711869f180f51_72540647 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -186,12 +186,12 @@ function content_570dc64bdea473_44512149 ($_smarty_tpl) {
 					<ul>
 							<li ><a href="kompetensi.php">Kompetensi Jabatan</a></li>
 							<li ><a href="ukur.php">Pengukuran Kompetensi Pegawai</a></li>
-							<li ><a href="#">Hasil Pengukuran Kompetensi</a></li>
-							<li ><a href="#">Kinerja Pegawai</a></li>
+							<li ><a href="hasilkompetensi.php">Hasil Pengukuran Kompetensi</a></li>
+							<li ><a href="kinerja.php">Kinerja Pegawai</a></li>
 							<li ><a href="peluangkarir.php">Peluang Karir (Jabatan)</a></li>
 							<li ><a href="posjbtkosong.php">Posisi Jabatan Kosong</a></li>
-							<li ><a href="#">Peluang Karir Pegawai</a></li>
-							<li ><a href="#">Calon Pemegang Jabatan</a></li>
+							<li ><a href="peljabpeg.php">Peluang Karir Pegawai</a></li>
+							<li ><a href="calpemegangjab.php">Calon Pemegang Jabatan</a></li>
 					</ul>
 					</li>
 					

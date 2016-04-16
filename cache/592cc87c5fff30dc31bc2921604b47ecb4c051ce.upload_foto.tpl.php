@@ -1,13 +1,13 @@
 <?php
-/*%%SmartyHeaderCode:1562571187adaf4de0_24943253%%*/
+/*%%SmartyHeaderCode:8055571186ab47e0e5_99271799%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'ae59b9bf5659b9a4a55fd76e70ae2506c8bc5040' => 
+    '592cc87c5fff30dc31bc2921604b47ecb4c051ce' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\karir\\templates\\cara_isi_kompetensi.tpl',
-      1 => 1460766053,
+      0 => 'C:\\xampp\\htdocs\\karir\\templates\\upload_foto.tpl',
+      1 => 1460766054,
       2 => 'file',
     ),
     'c35f576cdadeaf749e52d9c4f71f8b8e386d3203' => 
@@ -28,12 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1460766054,
       2 => 'file',
     ),
-    'de2b6711481e58d8ed9cdc4d37d7abac51ab1f6b' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\karir\\templates\\breadcrumb.tpl',
-      1 => 1460766053,
-      2 => 'file',
-    ),
     'e1e3a632bcaaa5aac4ab979dfc088b7095e354f3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\footer.tpl',
@@ -41,23 +35,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1562571187adaf4de0_24943253',
+  'nocache_hash' => '8055571186ab47e0e5_99271799',
   'tpl_function' => 
   array (
   ),
   'variables' => 
   array (
-    'awal' => 0,
-    'subtitle' => 0,
+    'id' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_571187adebb8c2_34448081',
+  'unifunc' => 'content_571186ab88e760_59572418',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_571187adebb8c2_34448081')) {
-function content_571187adebb8c2_34448081 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_571186ab88e760_59572418')) {
+function content_571186ab88e760_59572418 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,13 +140,31 @@ function content_571187adebb8c2_34448081 ($_smarty_tpl) {
 		</ul>
 	</div>
 	<!-- /navbar -->
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.min2.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+  <link type="text/css" href="development-bundle/themes/base/jquery.ui.all.css" rel="stylesheet" />
+	<script type="text/javascript" src="development-bundle/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="development-bundle/ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="development-bundle/ui/i18n/jquery.ui.datepicker-id.js"></script>
+  <script type="text/javascript" src="js/autoNumeric.js"></script>
+  <script src="js/jQuery-Mask-Plugin_js_jquery.mask.min.js"> </script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.autocomplete.js"></script>
+
+
+
 	<!-- Page container -->
  	<div class="page-container">
+
 
 		<!-- Sidebar -->
 		<div class="sidebar">
 			<div class="sidebar-content">
 
+				
 								<!-- User dropdown -->
 				<div class="user-menu dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -165,13 +176,13 @@ function content_571187adebb8c2_34448081 ($_smarty_tpl) {
 					
 				</div>
 				<!-- /user dropdown -->
-
+				
 				<!-- Main navigation -->
 				<ul class="navigation">				
 					<li ><a href="index.php?action=showmenu"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 					<li><a href="#"><span>Master</span> <i class="icon-accessibility"></i></a>
 					<ul>
-							<li ><a href="employee.php">Database Pegawai</a></li>
+							<li  class="active" ><a href="employee.php">Database Pegawai</a></li>
 							<li ><a href="pendidikan.php">Pendidikan</a></li>
 							<li ><a href="eselon.php">Eselon</a></li>
 							<li ><a href="unitkerja.php">Unit Kerja</a></li>
@@ -186,7 +197,7 @@ function content_571187adebb8c2_34448081 ($_smarty_tpl) {
 					<li><a href="#"><span>Karir</span> <i class="icon-clipboard"></i></a>
 					<ul>
 							<li ><a href="kompetensi.php">Kompetensi Jabatan</a></li>
-							<li  class="active" ><a href="ukur.php">Pengukuran Kompetensi Pegawai</a></li>
+							<li ><a href="ukur.php">Pengukuran Kompetensi Pegawai</a></li>
 							<li ><a href="hasilkompetensi.php">Hasil Pengukuran Kompetensi</a></li>
 							<li ><a href="kinerja.php">Kinerja Pegawai</a></li>
 							<li ><a href="peluangkarir.php">Peluang Karir (Jabatan)</a></li>
@@ -211,70 +222,33 @@ function content_571187adebb8c2_34448081 ($_smarty_tpl) {
 
 			<!-- Page header -->
 			<div class="page-header">
+      <br />
 				<div class="page-title">
-					<h3>Pengukur Kompetensi<small>Informasi Pengukur Kompetensi</small></h3>
 				</div>
-
-				<div id="reportrange" class="range">
-					<div class="visible-xs header-element-toggle">
-						<a class="btn btn-primary btn-icon"><i class="icon-calendar"></i></a>
-					</div>
-					<!--<div class="date-range"></div>-->
-					<!--<span class="label label-danger">9</span>-->
-				</div>
-			</div>
-			<!-- /page header -->
-			<!-- Breadcrumbs line -->
-			<!-- Info Block -->
+			</div>	
 			
-<div class="breadcrumb-line">
-				<ul class="breadcrumb">
-					<li><a href="index.php?action=showmenu">Home</a></li>
-					 					 					 					 					 					 					 					 					 					 					 					 <li class="active">Pengukuran Kompetensi Pegawai</li>					 					 					 					 					 					 				</ul>
-				<div class="visible-xs breadcrumb-toggle">
-					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
-				</div>
-			</div>
+				<!-- Simple registration form -->
+<form name="myForm" class="" action="?action=addProcess" method="POST" ENCTYPE="multipart/form-data">
+<input type="hidden" name="id" value="2">
 
-				<!-- /main navigation -->
-			<!-- /breadcrumbs line -->
-			<!-- Table inside panel body -->
-
-<h3 align=CENTER><font size=5>PETUNJUK PENGISIAN</font> </h3>
-<br />
-
-          <h4 align=CENTER><strong>Bapak/Ibu/Saudara yang terhormat,</strong><h4 align=CENTER>
-     <font size=2>
-          Setelah ini Bapak/Ibu/Saudara akan dihadapkan pada beberapa pernyataan sebagai jawaban atas 18 pertanyaan. Bapak/Ibu/Saudara harus memilih satu jawaban yang paling sesuai dengan situasi dan kondisi Bapak/Ibu/Saudara yang sesungguhnya selama ini dengan cara klik jawaban yang paling sesuai.
-Usahakan untuk menjawab semua pertanyaan karena halaman selanjutnya baru akan dapat terbuka setelah Bapak/Ibu/Saudara menjawab pertanyaan yang tampil.
-Aplikasi ini tidak akan pernah selesai sebelum Bapak/Ibu/Saudara menjawab semua pertanyaan yang ada. Sebaliknya jika semua pertanyaan sudah dijawab maka aplikasi ini tidak akan dapat digunakan lagi.
-
-Terima kasih, sukses selalu dan selamat bekerja.......
-        </font>
-   <br />
-   <br />
-   <br />
-
-           <div style="float:center; "></div>
-
-          <a href="ukur.php?action=idpenilaianhard" class="btn btn-primary"> Masuk Ke Pilihan Penilai</a>
- <br />
- <br />
-
-
-
-
-
-	<script src="js/jquery.dataTables.js" type="text/javascript"></script>
-	<script language="javascript" type="text/javascript">  
-	$(document).ready(function() {
-		$('#example').dataTable( {
-			"pagingType": "full_numbers"
-		} );
-	} );
-	</script>
-			
-	         <!-- Footer -->
+	<div class="panel panel-info">
+    <div class="panel-heading"><h6 class="panel-title"><i class="icon-menu"></i>Upload Foto</h6></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <input type="file" name="smap" id="smap" class="form-control">
+               </div>
+                    </div> 
+                  </div>
+          <div class="form-actions text-left">
+           <input type="submit" data-toggle="modal" role="button"  value="Upload" class="btn btn-info">
+              <INPUT TYPE="BUTTON" VALUE="Back" ONCLICK="history.go(-1)" class="btn btn-default">
+            </div>
+      </div>
+      </div>
+      </form>
+                    <!-- Footer -->
     <div class="footer clearfix">
         <div class="pull-left">&copy; 2016. Langit Infotama</div>
     	<div class="pull-right icons-group">

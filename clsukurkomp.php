@@ -47,7 +47,7 @@ class ukurkomp {
  				  
 		//ambil data pengguna-------------------------------------------------------------
 			//ini untuk mengisi data view nipp view
-			$sql = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+			echo $sql = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
 		LEFT JOIN tab_user ON a.id = tab_user.id 
 		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE tab_user.username ='$_SESSION[username]'";
 			$result_pegawai = $db->Execute($sql);
@@ -66,7 +66,7 @@ class ukurkomp {
 				//fetch data untuk Bawahan ke 1
 				if(!empty($rs_jumjabatan['nik_bawahan'])){
 					$rsBawahan[] = $rs_jumjabatan['nik_bawahan'];
-						$sql_name = "SELECT * FROM tab_pegawai where nik=$rs_jumjabatan[nik_bawahan]";
+						$sql_name = "SELECT * FROM tab_pegawai where nik='$rs_jumjabatan[nik_bawahan]'";
 						$result_name = $db -> Execute($sql_name);
 						$rs_name = $result_name->FetchRow();
 						$rsBawahanName[] = $rs_name['nm_pegawai'];
@@ -75,18 +75,19 @@ class ukurkomp {
 				//fetch data untuk atasan ke 1
 				if(!empty($rs_jumjabatan['nik_atasan'])){
 					$rsAtasan[] = $rs_jumjabatan['nik_atasan'];
-						$sql_name = "SELECT * FROM tab_pegawai where nik=$rs_jumjabatan[nik_atasan]";
+						$sql_name = "SELECT * FROM tab_pegawai where nik='$rs_jumjabatan[nik_atasan]'";
 						$result_name = $db -> Execute($sql_name);
 						$rs_name = $result_name->FetchRow();
 						$rsAtasanName[] = $rs_name['nm_pegawai'];
 				}			
 			}
+
 			
 		    //fetch data untuk Bawahan ke 2
-			$sql_jumjabatan = "SELECT * FROM tab_pegawai where nik_atasan='$nik'";
+			 $sql_jumjabatan = "SELECT * FROM tab_pegawai where nik_atasan='$nik'";
 			$result_jumjabatan = $db -> Execute($sql_jumjabatan);
 			while($rs_jumjabatan = $result_jumjabatan->FetchRow()){
-				if($rs_jumjabatan['nik_atasan'] == $nik && $rs_jumjabatan['nik']!=$rsBawahan[0]){
+				if($rs_jumjabatan['nik_atasan'] == $nik && $rs_jumjabatan['nik']!=$rsBawahanName[0]){
 					$rsBawahan[] = $rs_jumjabatan['nik'];
 					$rsBawahanName[] = $rs_jumjabatan['nm_pegawai'];
 				}

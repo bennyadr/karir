@@ -1,5 +1,5 @@
 <?php
-/*%%SmartyHeaderCode:240157051cd928b720_21557100%%*/
+/*%%SmartyHeaderCode:173985711869ab21324_17154026%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -7,41 +7,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '04b63553eb74c0e11f1f6eecdd5dbac8494acf74' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\kamus.tpl',
-      1 => 1459232441,
+      1 => 1460766054,
       2 => 'file',
     ),
     'c35f576cdadeaf749e52d9c4f71f8b8e386d3203' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\header.tpl',
-      1 => 1458188498,
+      1 => 1460766054,
       2 => 'file',
     ),
     '2527243d118472ae5b699e4cc0b8e1f892cbf895' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\pengelola.tpl',
-      1 => 1456301560,
+      1 => 1460766054,
       2 => 'file',
     ),
     '13aacec472de38201bb15fd18a7e54b2c7aff444' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\mainnav.tpl',
-      1 => 1459921669,
+      1 => 1460766054,
       2 => 'file',
     ),
     'de2b6711481e58d8ed9cdc4d37d7abac51ab1f6b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\breadcrumb.tpl',
-      1 => 1459824448,
+      1 => 1460766053,
       2 => 'file',
     ),
     'e1e3a632bcaaa5aac4ab979dfc088b7095e354f3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\footer.tpl',
-      1 => 1453872114,
+      1 => 1460766054,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '240157051cd928b720_21557100',
+  'nocache_hash' => '173985711869ab21324_17154026',
   'tpl_function' => 
   array (
   ),
@@ -51,12 +51,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_57051cda382295_81493821',
+  'unifunc' => 'content_5711869ae8b3a1_19018361',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_57051cda382295_81493821')) {
-function content_57051cda382295_81493821 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711869ae8b3a1_19018361')) {
+function content_5711869ae8b3a1_19018361 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +117,7 @@ function content_57051cda382295_81493821 ($_smarty_tpl) {
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse " role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" style="margin-top:-4px;" href="index.php?action=showmenu"><title="Sistem Informasi Pegawai" alt="Sistem Informasi Karir Pegawai">Karir Pegawai</a>
+			<a class="navbar-brand" style="margin-top:-4px;" href="index.php?action=showmenu"><title="Sistem Informasi Pegawai" alt="Sistem Informasi Karir Pegawai"><img src="img/logo kementerian PU.png"></a>
 			<a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons">
 				<span class="sr-only">Toggle navbar</span>
@@ -130,12 +130,12 @@ function content_57051cda382295_81493821 ($_smarty_tpl) {
 		</div>
 
 		<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
-					
-			
+				
+		
 			<li class="user dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					<!--<img src="http://placehold.it/300">-->
-					<span></span>
+					<span>admin</span>
 					<i class="caret"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
@@ -158,7 +158,7 @@ function content_57051cda382295_81493821 ($_smarty_tpl) {
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="images/admin.png">
 						<div class="user-info">
-							Pengelola Website <span></span>
+							Pengelola Website <span>admin</span>
 						</div>
 					</a>
 					
@@ -186,12 +186,12 @@ function content_57051cda382295_81493821 ($_smarty_tpl) {
 					<ul>
 							<li ><a href="kompetensi.php">Kompetensi Jabatan</a></li>
 							<li ><a href="ukur.php">Pengukuran Kompetensi Pegawai</a></li>
-							<li ><a href="#">Hasil Pengukuran Kompetensi</a></li>
-							<li ><a href="#">Kinerja Pegawai</a></li>
-							<li ><a href="#">Peluang Karir (Jabatan)</a></li>
-							<li ><a href="#">Posisi Jabatan Kosong</a></li>
-							<li ><a href="#">Peluang Karir Pegawai</a></li>
-							<li ><a href="#">Calon Pemegang Jabatan</a></li>
+							<li ><a href="hasilkompetensi.php">Hasil Pengukuran Kompetensi</a></li>
+							<li ><a href="kinerja.php">Kinerja Pegawai</a></li>
+							<li ><a href="peluangkarir.php">Peluang Karir (Jabatan)</a></li>
+							<li ><a href="posjbtkosong.php">Posisi Jabatan Kosong</a></li>
+							<li ><a href="peljabpeg.php">Peluang Karir Pegawai</a></li>
+							<li ><a href="calpemegangjab.php">Calon Pemegang Jabatan</a></li>
 					</ul>
 					</li>
 					
@@ -225,6 +225,16 @@ function content_57051cda382295_81493821 ($_smarty_tpl) {
 			<!-- /page header -->
 			<!-- Breadcrumbs line -->
 			<!-- Info Block -->
+			
+<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.php?action=showmenu">Home</a></li>
+					 					 					 					 					 					 					 					 <li class="active">Kamus Kompetensi</li>					 					 					 					 					 					 					 					 					 					 				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+
 				<!-- /main navigation -->
 			<!-- /breadcrumbs line -->
 			<!-- Table inside panel body -->

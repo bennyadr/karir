@@ -1,5 +1,5 @@
 <?php
-/*%%SmartyHeaderCode:8103570dc8a042eeb0_73698171%%*/
+/*%%SmartyHeaderCode:259255711ab008c2ef3_12489296%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -17,7 +17,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8103570dc8a042eeb0_73698171',
+  'nocache_hash' => '259255711ab008c2ef3_12489296',
   'tpl_function' => 
   array (
   ),
@@ -36,12 +36,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_570dc8a0b0f5b7_80806295',
+  'unifunc' => 'content_5711ab0103c7a0_58478398',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_570dc8a0b0f5b7_80806295')) {
-function content_570dc8a0b0f5b7_80806295 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711ab0103c7a0_58478398')) {
+function content_5711ab0103c7a0_58478398 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -152,26 +152,26 @@ function content_570dc8a0b0f5b7_80806295 ($_smarty_tpl) {
 <TABLE align=center CELLSPACING=1 CELLPADDING=2 width=100<?php echo '%>';?>
     <TR>
         <TD colspan="2" align="right">
-	    <input name="name" type="hidden" value="1"/>
+	    <input name="name" type="hidden" value=""/>
             <input name="soal" type="hidden" value="1"/>
-            <input name="idkompetensi" type="hidden" value="1"/>
-            <input name="nikPenilai" type="hidden" value="1"/>
-            <input name="nikDinilai" type="hidden" value="1"/>
-	       <input name="posisi" type="hidden" value="1"/>
+            <input name="idkompetensi" type="hidden" value=""/>
+            <input name="nikPenilai" type="hidden" value=""/>
+            <input name="nikDinilai" type="hidden" value=""/>
+	       <input name="posisi" type="hidden" value=""/>
             <input name="kembali" type="hidden" value="<br />
 <b>Notice</b>:  Undefined index: kembali in <b>C:\xampp\htdocs\karir\templates_c\482eb745f474c4f20e63859684166fafad348205_0.file.soal_kompetensi.tpl.cache.php</b> on line <b>76</b><br />
 <br />
 <b>Notice</b>:  Trying to get property of non-object in <b>C:\xampp\htdocs\karir\templates_c\482eb745f474c4f20e63859684166fafad348205_0.file.soal_kompetensi.tpl.cache.php</b> on line <b>76</b><br />
 "/>
             
-            <!--        		<input name="" type="button" onClick="javascript: window.location='ukurkomp.php?mod=idpenilaian&nipRelasiJabatan=1&nip=1&idkompetensi=1&kembali=kembali'" value="Back"/>
+            <!--        		<input name="" type="button" onClick="javascript: window.location='ukurkomp.php?mod=idpenilaian&nipRelasiJabatan=&nip=&idkompetensi=&kembali=kembali'" value="Back"/>
             -->
         </TD>     
     </TR>
 
 <table width="50%">
     <tr>
-        <td><span class="label label-block label-danger text-left"><h6>Nama Penilai : 1</h6></span></td><br />
+        <td><span class="label label-block label-danger text-left"><h6>Nama Penilai : </h6></span></td><br />
     </tr>
  </table><br />
  

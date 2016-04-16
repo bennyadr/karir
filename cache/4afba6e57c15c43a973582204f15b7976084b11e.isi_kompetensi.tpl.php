@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 /*%%SmartyHeaderCode:179305711bbd43ab437_04121152%%*/
+=======
+/*%%SmartyHeaderCode:306855711b37abe3b47_84794327%%*/
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -7,7 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4afba6e57c15c43a973582204f15b7976084b11e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\isi_kompetensi.tpl',
+<<<<<<< HEAD
       1 => 1460766054,
+=======
+      1 => 1460777841,
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
       2 => 'file',
     ),
     'c35f576cdadeaf749e52d9c4f71f8b8e386d3203' => 
@@ -35,42 +43,46 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
+<<<<<<< HEAD
   'nocache_hash' => '179305711bbd43ab437_04121152',
+=======
+  'nocache_hash' => '306855711b37abe3b47_84794327',
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
   'tpl_function' => 
   array (
   ),
   'variables' => 
   array (
-    'nik' => 0,
-    'name' => 0,
-    'jabatan' => 0,
-    'idkompetensi' => 0,
-    'jabatan_option' => 0,
-    'jabatan_onchange' => 0,
-    'keterangan_menilai' => 0,
-    'bawahan' => 0,
-    'bawahan_option' => 0,
-    'atasan' => 0,
-    'atasan_option' => 0,
-    'rekan' => 0,
-    'rekan_option' => 0,
-    'nip_dinilai' => 0,
-    'name_dinilai' => 0,
-    'jumlah' => 0,
-    'jabatan_dinilai' => 0,
-    'nikRelasiJabatan_onchange' => 0,
     'nikdinilai' => 0,
-    'soal' => 0,
-    'kembali' => 0,
+    'namadinilai' => 0,
+    'jabatandinilai' => 0,
+    'option' => 0,
+    'selpen' => 0,
+    'keterangan_menilai' => 0,
+    'sign' => 0,
+    'rsbawah' => 0,
+    'info' => 0,
+    'nikpenilai' => 0,
+    'namapenilai' => 0,
+    'jabatanpenilai' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
+<<<<<<< HEAD
   'unifunc' => 'content_5711bbd48e6031_02902077',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
 if ($_valid && !is_callable('content_5711bbd48e6031_02902077')) {
 function content_5711bbd48e6031_02902077 ($_smarty_tpl) {
+=======
+  'unifunc' => 'content_5711b37bbb1855_39034007',
+  'cache_lifetime' => 120,
+),true);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5711b37bbb1855_39034007')) {
+function content_5711b37bbb1855_39034007 ($_smarty_tpl) {
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -253,7 +265,10 @@ function content_5711bbd48e6031_02902077 ($_smarty_tpl) {
 			<!-- /breadcrumbs line -->
 			<!-- Table inside panel body -->
 
+
+
 <form method="post" action="ukur.php?action=pertanyaan" ENCTYPE="multipart/form-data">
+
 <div class="row">
         		<div class="col-md-6">
 		            <div class="panel panel-success">
@@ -261,106 +276,84 @@ function content_5711bbd48e6031_02902077 ($_smarty_tpl) {
 	                    	<h3 class="panel-title"><i class="icon-accessibility"></i> PENILAI</h3>
                     	</div>
                     	<div class="panel-body">
-	                    	<table>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>NIK</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="131473865" disabled="disabled" class="form-control input-sm"> <br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Nama</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="si pegawai 1" disabled="disabled" class="form-control input-sm"><br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Jabatan</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="KEPALA CABANG" disabled="disabled" class="form-control input-sm"><br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Menilai</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"> <form name="jabatanform" method="post" id="form"  action="ukurkomp.php?action=jabatan">
-                                  <input type="hidden" name="idkompetensi" id="textfield" size="40" value=""/>
-                                  <select name="idjabatan" id="jumpMenu"onchange="javascript:document.jabatanform.submit ();" class="form-control input-sm">
-                                    <option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
-                                      <option value='Atasan'>Atasan</option><option value='Bawahan'>Bawahan</option>
-                                   </select>
+	                    	<table class="table table-striped table-bordered table-hover" width="100%">
+              <tr >
+                  <td style="width:20%"> NIK </td>
+                    <td style="width:5%"> : </td>
+                    <td>131473865   </td>
+                </tr>
+                <tr>
+                  <td> Nama </td>
+                    <td> : </td>
+                    <td>si pegawai 1   </td>
+                </tr>
+                <tr>
+                  <td> Jabatan </td>
+                    <td> : </td>
+                    <td>KEPALA CABANG   </td>
+                </tr>
+                <tr>
+                  <td>Menilai</td>
+                  <td>:</td>
+                  <td> 
+                   
+                                <form name="selpen" method="post" id="form" action="ukur.php">
+                                   
+                  <select name="selpen" id="selpen" class="form-control" onchange="javascript:document.selpen.submit();">
+                                   <option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
+					<option value="Atasan">Atasan</option>
+             	   <option value="Bawahan">Bawahan</option>
+                                  </select>
+                                   
                                 </form>
-                                </td>
-	                    		</tr>
-	                    	</table>
-                    	</div>
-                	</div>
-                	</div>
+                              </td>
+                </tr>
+             </table>
+            </div>
+          </div>
+          
+          
+          </div>
+      
 
 
         		<div class="col-md-6">
 		            <div class="panel panel-info">
 		                <div class="panel-heading">
 	                    	<h3 class="panel-title"><i class="icon-accessibility"></i>MENILAI :
-	                    	                      Yang Bersangkutan
+	                    	                      
                                             </h3>
                     	</div>
                     	<div class="panel-body">
                     	
-	                    	<table>
+	                    	              <table class="table table-striped table-bordered table-hover" width="100%">
+                <tr >
+                  <td style="width:20%"> NIK </td>
+                  <td style="width:5%"> : </td>
+                  <td>130911983</td>
+                </tr>
+                <tr>
+                  <td> Nama </td>
+                  <td> : </td>
+                  <td>si pegawai 2</td>
+                </tr>
+                <tr>
+                  <td> Jabatan </td>
+                  <td> : </td>
+                  <td>KEPALA DIVISI KEUANGAN DAN UMUM</td>
+                </tr>
+                        </table>
+              </div>
 
-	                    		<tr>
-	                    		<td width="12%" height="10" valign=top><b>NIK</b></td>
-                                <td width="4%" valign=top>:</td>
-                                <td width="64%" valign=top>                                  <input type="text" class="form-control input-sm" <input type='text' size='40' value='131473865' disabled/>
-                                                              </td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" height="100"><b>Nama</b></td>
-                                <td width="4%">:</td>
-                                <td width="64%">                                        	<input type="text" name="textfield2" id="textfield2" size="40" value="si pegawai 1" disabled="disabled" class="form-control input-sm" />	
-                                        									</td>
-	                    		</tr>
-	                    		
-	                    		<tr>
-	                    		<td width="12%"><b>Jabatan</b></td>
-                                <td width="4%">:</td>
-                                <td width="64%">                                   	<input type="text" name="textfield2" id="textfield2" size="40" value="KEPALA CABANG" disabled="disabled" class="form-control input-sm" />	
-                                </td>
-	                    		</tr>
-	                    		<br />
-	                    	</table>
-                    	</div>
-                    	</div>
-                    	</div>
-
-
-                    <table width="100%">       
-              <tr>
-                  <td align="center">
-                    <form method="post" action="ukur.php?action=pertanyaan">
-                        <input type="hidden" name="nikPenilai" id="textfield" size="40" value="131473865" />
-                        
-                                                    <input type="hidden" name="posisi" id="textfield" size="40" value="Yang Bersangkutan" />
-                                                
-                                                    <input type="hidden" name="nikDinilai" id="textfield" size="40" value="131473865" />
-                          
-                        <input type="hidden" name="idkompetensi" id="textfield" size="40" value=""/>
-            <input type="hidden" name="name" id="textfield" size="40" value="si pegawai 1"/>
-                        <input type="hidden" name="soal" id="textfield" size="40" value="0"/>
-                        <input type="hidden" name="kembali" id="textfield" size="40" value=""/>
-                        <input name="" type="button" onClick="javascript:window.location='ukur.php?action=petunjukhard'" class="btn btn-primary" value="Cancel"/>&nbsp;&nbsp;
+           <div class="form-actions text-left">                    
+&nbsp;&nbsp;&nbsp;&nbsp;
                        <input type=submit value="MASUK KE PERTANYAAN" class="btn btn-primary" />
                         <input name="" type="hidden" value="Rekap" v/>
-                    </form>
-                    </td>
-                </tr>
-            </table>
-        </TD>
-    </TR>
+                   <INPUT TYPE="BUTTON" VALUE="Back" ONCLICK="history.go(-1)" class="btn btn-default">
 
-</TABLE>
-
-
-                	</div>
-</div>
+          </div>
+          <br />
+           </div>
 <?php }
 }
 ?>

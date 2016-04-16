@@ -38,30 +38,33 @@ class ukurkomp {
 		$smarty->assign("statuslogin",$_SESSION['statuslogin']);
 		$smarty->assign("samping","32");
 		
-		$jabatan_onchange = isset($_REQUEST['idjabatan']) ? $_REQUEST['idjabatan'] : '';
+		$selpen = isset($_REQUEST['idjabatan']) ? $_REQUEST['idjabatan'] : '';
 		$idkompetensi = isset($_REQUEST['idkompetensi']) ? $_REQUEST['idkompetensi'] : '';
 		$kembali = isset($_REQUEST['kembali']) ? $_REQUEST['kembali'] : '';
-		$nikRelasiJabatan_onchange = isset($_REQUEST['nikRelasiJabatan']) ? $_REQUEST['nikRelasiJabatan'] : '';
+		$nikRelasiselpen = isset($_REQUEST['nikRelasiJabatan']) ? $_REQUEST['nikRelasiJabatan'] : '';
 		$nik = isset($_REQUEST['nik']) ? $_REQUEST['nik'] : '';
 		
  				  
+		//option 
+		$option = '<option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
+               	  <option value="Atasan">Atasan</option>
+               	  <option value="Bawahan">Bawahan</option>';
+		
+		
+		//BELUM DIPILIH
+ 				  
 		//ambil data pengguna-------------------------------------------------------------
+<<<<<<< HEAD
 			//ini untuk mengisi data view nipp view
 			echo $sql = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+=======
+			$sqluser = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
 		LEFT JOIN tab_user ON a.id = tab_user.id 
 		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE tab_user.username ='$_SESSION[username]'";
-			$result_pegawai = $db->Execute($sql);
-			$pos_list = $result_pegawai->FetchRow();
-			$smarty -> assign("nik", $pos_list['nik']);
-            $smarty -> assign("name",	$pos_list['nm_pegawai']);
-			$smarty -> assign("jabatan", $pos_list['jabatan_name']);
 			
-			$nik = $pos_list['nik'];
-			
-			// ini untuk menetukan count jumlah bawahan 1
-			$sql_jumjabatan = "SELECT * FROM tab_pegawai where nik='$nik'";
-			$result_jumjabatan = $db -> Execute($sql_jumjabatan);
 
+<<<<<<< HEAD
             while($rs_jumjabatan = $result_jumjabatan->FetchRow()){		
 				//fetch data untuk Bawahan ke 1
 				if(!empty($rs_jumjabatan['nik_bawahan'])){
@@ -103,162 +106,161 @@ class ukurkomp {
 					$rsAtasanName[] = $rs_jumjabatan['nm_pegawai'];
 				}		
 			}
+=======
+			$exsqluser = $db->Execute($sqluser);
+		$datauser = $exsqluser->FetchRow();
+		
+		$nikdinilai = $datauser['nik'];
+		$namadinilai = $datauser['nm_pegawai'];
+		$jabatandinilai = $datauser['jabatan_name'];
+		$nikatasandinilai = $datauser['nik_atasan'];
+		$nikbawahandinilai = $datauser['nik_bawahan'];
+		$pilihan = $nikdinilai;
+ 
+		
+ 		//ambil atasan --------------------------------------------------------
+		$sqlatasan = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+		LEFT JOIN tab_user ON a.id = tab_user.id 
+		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE a.nik = '$nikatasandinilai'";
+>>>>>>> cd2ebe2955a0e01d8f93df93cba4e6efc5155b7c
 
-			// Melakukan Proses Pengecekan
-			//******* ATASAN *******//
-			$bawahan = count($rsBawahan);
-			$atasan = count($rsAtasan);
-			//$rekan = count($rsRekan);
-			$name_dinilai = '';
-			$jabatan_dinilai = '';
-			
-			if($atasan!=0){
-		        if($jabatan_onchange=='Atasan'){
-					$jabatan_option .= "<option value='Atasan' selected>Atasan</option>";
-				}else{	
-					$jabatan_option .= "<option value='Atasan'>Atasan</option>";
-				}
-				
-				//ini untuk mendapatkan NIP Atasan
-				if($jabatan_onchange=='Atasan'){
-					
-					if(!empty($nikRelasiJabatan_onchange)){
-						$sql_atasan="SELECT * FROM tab_pegawai a,tab_jabatan b where nik=$nikRelasiJabatan_onchange and a.id_jabatan = b.id";
-					}else{
-						$sql_atasan="SELECT * FROM tab_pegawai a,tab_jabatan b where nik=$rsAtasan[0] and a.id_jabatan = b.id";
-					}
-					$result_sql_atasan = $db -> Execute($sql_atasan);
-					$rs_sql_atasan = $result_sql_atasan->FetchRow();
-					$name_dinilai = $rs_sql_atasan['nm_pegawai'];
-					$jabatan_dinilai = $rs_sql_atasan['nm_jabatan'];
-					$nikdinilai = $rs_sql_atasan['nik'];
-						
-					if($atasan>1){
-						for ($i = 0; $i < $atasan; $i++) {
-							if(!empty($nikRelasiJabatan_onchange)){
-								$nppmenilai = $nikRelasiJabatan_onchange;
-							}else{
-								$nppmenilai = $rsAtasan[0];
-							}
-							
-							if($nikRelasiJabatan_onchange==$rsAtasan[$i]){
-								$atasan_option .= "<option value='$rsAtasan[$i]' selected>$rsAtasan[$i] - $rsAtasanName[$i]</option>"; 
-								
-							}else{
-								$atasan_option .= "<option value='$rsAtasan[$i]'>$rsAtasan[$i] - $rsAtasanName[$i]</option>"; 
-								
-							}
-						}					
-					}else{
-						$atasan_option .= "<input type='text' size='40' value='$rsAtasan[0]' disabled/>";
-						$nppmenilai = $rsAtasan[0];
-						
-					}
-				}
-			}
-			
-			//******* BAWAHAN *******//
-			if($bawahan!=0){
-				if($jabatan_onchange=='Bawahan'){
-					$jabatan_option .= "<option value='Bawahan' selected>Bawahan</option>";
-				}else{
-					$jabatan_option .= "<option value='Bawahan'>Bawahan</option>";
-				}
-				
-				//ini untuk mendapatkan NIP Bawahan
-				if($jabatan_onchange=='Bawahan'){
-					
-					if(!empty($nikRelasiJabatan_onchange)){
-						$sql_bawahan="SELECT * FROM tab_pegawai a,tab_jabatan b where nik=$nikRelasiJabatan_onchange and a.id_jabatan = b.id";
-					}else{
-						$sql_bawahan="SELECT * FROM tab_pegawai a,tab_jabatan b where nik=$rsBawahan[0] and a.id_jabatan = b.id";
-					}
-					$result_sql_bawahan = $db -> Execute($sql_bawahan);
-					$rs_sql_bawahan = $result_sql_bawahan->FetchRow();
-					$name_dinilai = $rs_sql_bawahan['nm_pegawai'];
-					$jabatan_dinilai = $rs_sql_bawahan['nm_jabatan'];
-					$nikdinilai = $rs_sql_bawahan['nik'];
-					
-					if($bawahan>1){
-						for ($i = 0; $i < $bawahan; $i++) {
-							if(!empty($nikRelasiJabatan_onchange)){
-								$nppmenilai = $nikRelasiJabatan_onchange;
-							}else{
-								$nppmenilai = $rsBawahan[0];
-							}
-							
-							if($nikRelasiJabatan_onchange==$rsBawahan[$i]){
-								$bawahan_option .= "<option value='$rsBawahan[$i]' selected>$rsBawahan[$i] - $rsBawahanName[$i]</option>"; 
-								
-							}else{
-								$bawahan_option .= "<option value='$rsBawahan[$i]'>$rsBawahan[$i] - $rsBawahanName[$i]</option>";
-								
-							}
-						}					
-					}else{
-						$bawahan_option .= "<input type='text' size='40' value='$rsBawahan[0]' disabled/>";
-						$nppmenilai =$rsBawahan[0];
-					}
-				}
-			}
+		$exsqlatasan = $db->Execute($sqlatasan);
+		$dataatasan = $exsqlatasan->FetchRow();
+ 
+		$nik_ats = $dataatasan['nik'];
+		$nm_ats = $dataatasan['nm_pegawai'];
+		$jab_ats = $dataatasan['jabatan_name'];
+ 		
+		$smarty->assign("nikdinilai",$nikdinilai);
+		$smarty->assign("namadinilai",$namadinilai);
+		$smarty->assign("jabatandinilai",$jabatandinilai);
 
-				$nip_dinilai = "<input type='text' size='40' value='$nik' disabled/>";
-				$smarty -> assign("atasan",$atasan);
-				$smarty -> assign("bawahan",$bawahan);
-				//$smarty -> assign("rekan",$rekan);
-				//$smarty -> assign("rekan_option",$rekan_option);
-				$smarty -> assign("atasan_option",$atasan_option);
-				$smarty -> assign("jabatan_onchange",$jabatan_onchange);
-				$smarty -> assign("jabatan_option",$jabatan_option);
-				$smarty -> assign("nip_dinilai",$nip_dinilai);
-				$smarty -> assign("keterangan_menilai","Yang Bersangkutan");
-				$smarty -> assign("bawahan_option",$bawahan_option);
-				$smarty -> assign("name_dinilai",$name_dinilai);
-				$smarty -> assign("jabatan_dinilai",$jabatan_dinilai);
-				$smarty -> assign("nikRelasiJabatan_onchange",$nikRelasiJabatan_onchange);
-				$smarty -> assign("nikdinilai",$nikdinilai);
-				
-				
-				if( $jabatan_onchange == 'Atasan'){
-					$jumlah = $atasan;
-				}elseif($jabatan_onchange == 'Bawahan'){
-					$jumlah = $bawahan;
-				}elseif($jabatan_onchange == 'Rekan'){
-					$jumlah = $rekan;
-				}
-				$smarty -> assign("jumlah",$jumlah);
-					
-				
-				if($kembali=="kembali"){
-					$smarty -> assign("soal",2);
-				}else{
-					$smarty -> assign("soal",0);
-				}
-				
-				$smarty -> assign("kembali",$kembali);
-				$smarty -> assign("idkompetensi",$idkompetensi);
-				
-				//pengecekan untuk tombol isi keusioner
-				if($nppmenilai==""){
-					$sql_quiz_answer="select * from dat_jawabancore where nik ='$nik' and NRKmenilai='$nik' LIMIT 1";
-				}else{
-					$sql_quiz_answer="select * from dat_jawabancore where nik ='$nik' and NRKmenilai='$nppmenilai' LIMIT 1";
-				}
-				//echo $sql_quiz_answer;echo exit;
-				$result_quiz_answer = $db -> Execute($sql_quiz_answer);
-				$rs_quiz_answer = $result_quiz_answer->FetchRow();
-				$tahun = date('Y'); 
-				
-				if(!empty($rs_quiz_answer['id_pegawai']) && $rs_quiz_answer['tahun']==$tahun){
-					$kuis="disabled";
-					//$button="";
-				//echo $button;echo exit;
-				}
-				//echo $rs_quiz_answer['tahun'];echo exit;
-				//echo $rs_quiz_answer['id_pegawai'];echo "--";echo $rs_quiz_answer['tahun'];echo "-";echo $tahun;echo exit;
-				//$smarty -> assign("kuis",$kuis);
-				$smarty->display("isi_kompetensi.tpl");
-				
+		
+		$smarty->assign("nikpenilai",$nik_ats);
+		$smarty->assign("namapenilai",$nm_ats);
+		$smarty->assign("jabatanpenilai",$jab_ats);
+		 
+		
+		//ambil bawahan --------------------------------------------------------
+		$sqlbawahan = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+		LEFT JOIN tab_user ON a.id = tab_user.id 
+		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE a.nik = '$nikbawahandinilai'";
+
+		$exsqlbawahan = $db->Execute($sqlbawahan);
+		$databawahan = $exsqlbawahan->FetchRow();
+ 
+		$nik_bwh = $databawahan['nik'];
+		$nm_bwh = $databawahan['nm_pegawai'];
+		$jab_bwh = $databawahan['jabatan_name'];
+ 		
+		$smarty->assign("nikdinilai",$nikdinilai);
+		$smarty->assign("namadinilai",$namadinilai);
+		$smarty->assign("jabatandinilai",$jabatandinilai);
+
+		
+		$smarty->assign("nikpenilai",$nik_bwh);
+		$smarty->assign("namapenilai",$nm_bwh);
+		$smarty->assign("jabatanpenilai",$jab_bwh);
+		
+		//OPSI PEMILIHAN
+		$selpen = isset($_REQUEST['selpen']) ? $_REQUEST['selpen'] : '';
+			
+		if($selpen == ''){
+			$mark = 0;
+		$option = '<option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
+					<option value="Atasan">Atasan</option>
+            	   <option value="Bawahan">Bawahan</option>';
+		$info = "";
+
+		 //ambil data pengguna-------------------------------------------------------------
+		$sqluser = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+		LEFT JOIN tab_user ON a.id = tab_user.id 
+		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE tab_user.username ='$_SESSION[username]'";
+		$exsqluser = $db->Execute($sqluser);
+		$datauser = $exsqluser->FetchRow();
+		
+		$nikdinilai = $datauser['nik'];
+		$namadinilai = $datauser['nm_pegawai'];
+		$jabatandinilai = $datauser['jabatan_name'];
+		$nikatasandinilai = $datauser['nik_atasan'];
+
+		 		//--------------------------------------------------------------------------------
+ 
+		//ambil atasan --------------------------------------------------------
+		
+ 		$sqlatasan = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+		LEFT JOIN tab_user ON a.id = tab_user.id 
+		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE a.nik = '$nikatasandinilai'";
+		$exsqlatasan = $db->Execute($sqlatasan);
+		$dataatasan = $exsqlatasan->FetchRow();
+ 
+		$nik_ats = $dataatasan['nik'];
+		$nm_ats = $dataatasan['nm_pegawai'];
+		$jab_ats = $dataatasan['jabatan_name'];
+
+		$smarty->assign("nikdinilai",$nikdinilai);
+		$smarty->assign("namadinilai",$namadinilai);
+		$smarty->assign("jabatandinilai",$jabatandinilai);
+
+		
+		$smarty->assign("nikpenilai",$nik_ats);
+		$smarty->assign("namapenilai",$nm_ats);
+		$smarty->assign("jabatanpenilai",$jab_ats);
+
+
+	//ambil bawahan --------------------------------------------------------
+		
+ 		$sqlbawahan = "SELECT a.id,a.nik,a.nm_pegawai,jabatan_name,nik_atasan,nik_bawahan FROM tab_pegawai a 
+		LEFT JOIN tab_user ON a.id = tab_user.id 
+		LEFT JOIN tbl_jabatan ON a.id = tbl_jabatan.id WHERE a.nik = '$nikbawahandinilai'";
+		$exsqlatasan = $db->Execute($sqlatasan);
+		$dataatasan = $exsqlatasan->FetchRow();
+ 
+		$nik_bwh = $databawahan['nik'];
+		$nm_bwh = $databawahan['nm_pegawai'];
+		$jab_bwh = $databawahan['jabatan_name'];
+
+		$smarty->assign("nikdinilai",$nikdinilai);
+		$smarty->assign("namadinilai",$namadinilai);
+		$smarty->assign("jabatandinilai",$jabatandinilai);
+
+		
+		$smarty->assign("nikpenilai",$nik_bwh);
+		$smarty->assign("namapenilai",$nm_bwh);
+		$smarty->assign("jabatanpenilai",$jab_bwh);
+
+
+		//ambil target yang bersagkutan 
+		
+		$option = '<option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
+					<option value="Atasan">Atasan</option>
+             	   <option value="Bawahan">Bawahan</option>';
+		
+		  		
+		$data_bawah = "select * from tab_pegawai where nik_atasan = '$pilihan' and nik_bawahan = '$pilihan'";
+		$exdata_bawah = $db->Execute($data_bawah);
+		$nobawah = 0;
+		$jmlbawah = $exdata_bawah->RecordCount();
+		
+		if($jmlbawah < 1){
+			$rsbawah[] = array("nobawah"=>'',"id"=>'',"nik"=>'',"nm_pegawai"=>'');	
+			$info = "Anda Tidak Memiliki Bawahan Sama Sekali";
+			$sign = 0;
+		}else{
+				while ($rowbawah = $exdata_bawah->FetchRow()){
+		$nobawah++;
+			$rsbawah[] = array("nobawah"=>$nobawah,"id"=>$rowbawah['id'],"nik_karyawan"=>$rowbawah['nik'],"nm_pegawai"=>$rowbawah['nm_pegawai']);
+			}
+			$info = "";
+			$sign = 1;
+		}
+		$smarty -> assign("keterangan_menilai","$selpen");
+		$smarty->assign("sign",$sign);
+		$smarty->assign("selpen",$selpen);
+		$smarty->assign("info",$info);
+		$smarty->assign("option",$option);
+		$smarty->display("isi_kompetensi.tpl");
+	}			
 		}
 			
 	

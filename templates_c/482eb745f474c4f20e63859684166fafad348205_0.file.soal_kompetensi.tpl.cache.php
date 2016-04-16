@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-13 06:18:40
+<?php /* Smarty version 3.1.27, created on 2016-04-16 05:01:20
          compiled from "C:\xampp\htdocs\karir\templates\soal_kompetensi.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:8103570dc8a042eeb0_73698171%%*/
+/*%%SmartyHeaderCode:259255711ab008c2ef3_12489296%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8103570dc8a042eeb0_73698171',
+  'nocache_hash' => '259255711ab008c2ef3_12489296',
   'variables' => 
   array (
     'name' => 0,
@@ -29,13 +29,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_570dc8a0596ef8_44779344',
+  'unifunc' => 'content_5711ab00a3cb19_57486611',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_570dc8a0596ef8_44779344')) {
-function content_570dc8a0596ef8_44779344 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711ab00a3cb19_57486611')) {
+function content_5711ab00a3cb19_57486611 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '8103570dc8a042eeb0_73698171';
+$_smarty_tpl->properties['nocache_hash'] = '259255711ab008c2ef3_12489296';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -57,7 +57,7 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
 
 <br/>
 <form id="form1" name="form1" method="post" action="ukur.php?action=pertanyaan">
-<TABLE align=center CELLSPACING=1 CELLPADDING=2 width=100<?php echo '/*%%SmartyNocache:8103570dc8a042eeb0_73698171%%*/<?php echo \'%>\';?>/*/%%SmartyNocache:8103570dc8a042eeb0_73698171%%*/';?>
+<TABLE align=center CELLSPACING=1 CELLPADDING=2 width=100<?php echo '/*%%SmartyNocache:259255711ab008c2ef3_12489296%%*/<?php echo \'%>\';?>/*/%%SmartyNocache:259255711ab008c2ef3_12489296%%*/';?>
 
     <TR>
         <TD colspan="2" align="right">

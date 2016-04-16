@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-15 19:40:14
+<?php /* Smarty version 3.1.27, created on 2016-04-16 05:37:30
          compiled from "C:\xampp\htdocs\karir\templates\isi_kompetensi.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:26095711277e374b37_01774759%%*/
+/*%%SmartyHeaderCode:306855711b37abe3b47_84794327%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,44 +9,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4afba6e57c15c43a973582204f15b7976084b11e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\karir\\templates\\isi_kompetensi.tpl',
-      1 => 1460521114,
+      1 => 1460777841,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26095711277e374b37_01774759',
+  'nocache_hash' => '306855711b37abe3b47_84794327',
   'variables' => 
   array (
-    'nik' => 0,
-    'name' => 0,
-    'jabatan' => 0,
-    'idkompetensi' => 0,
-    'jabatan_option' => 0,
-    'jabatan_onchange' => 0,
-    'keterangan_menilai' => 0,
-    'bawahan' => 0,
-    'bawahan_option' => 0,
-    'atasan' => 0,
-    'atasan_option' => 0,
-    'rekan' => 0,
-    'rekan_option' => 0,
-    'nip_dinilai' => 0,
-    'name_dinilai' => 0,
-    'jumlah' => 0,
-    'jabatan_dinilai' => 0,
-    'nikRelasiJabatan_onchange' => 0,
     'nikdinilai' => 0,
-    'soal' => 0,
-    'kembali' => 0,
+    'namadinilai' => 0,
+    'jabatandinilai' => 0,
+    'option' => 0,
+    'selpen' => 0,
+    'keterangan_menilai' => 0,
+    'sign' => 0,
+    'rsbawah' => 0,
+    'info' => 0,
+    'nikpenilai' => 0,
+    'namapenilai' => 0,
+    'jabatanpenilai' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5711277e63b325_27516092',
+  'unifunc' => 'content_5711b37adcc3b3_44667070',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5711277e63b325_27516092')) {
-function content_5711277e63b325_27516092 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711b37adcc3b3_44667070')) {
+function content_5711b37adcc3b3_44667070 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '26095711277e374b37_01774759';
+$_smarty_tpl->properties['nocache_hash'] = '306855711b37abe3b47_84794327';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -96,7 +87,10 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
 			<!-- /breadcrumbs line -->
 			<!-- Table inside panel body -->
 
+
+
 <form method="post" action="ukur.php?action=pertanyaan" ENCTYPE="multipart/form-data">
+
 <div class="row">
         		<div class="col-md-6">
 		            <div class="panel panel-success">
@@ -104,51 +98,55 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
 	                    	<h3 class="panel-title"><i class="icon-accessibility"></i> PENILAI</h3>
                     	</div>
                     	<div class="panel-body">
-	                    	<table>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>NIK</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['nik']->value;?>
-" disabled="disabled" class="form-control input-sm"> <br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Nama</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-" disabled="disabled" class="form-control input-sm"><br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Jabatan</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"><input type="text" name="textfield" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['jabatan']->value;?>
-" disabled="disabled" class="form-control input-sm"><br /></td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" valign="top"><b>Menilai</b></td>
-                                <td width="4%" valign="top">:</td>
-                                <td width="64%"> <form name="jabatanform" method="post" id="form"  action="ukurkomp.php?action=jabatan">
-                                  <input type="hidden" name="idkompetensi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['idkompetensi']->value;?>
-"/>
-                                  <select name="idjabatan" id="jumpMenu"onchange="javascript:document.jabatanform.submit ();" class="form-control input-sm">
-                                    <option value="Yang Bersangkutan" selected="selected">Yang Bersangkutan</option>
-                                      <?php echo $_smarty_tpl->tpl_vars['jabatan_option']->value;?>
+	                    	<table class="table table-striped table-bordered table-hover" width="100%">
+              <tr >
+                  <td style="width:20%"> NIK </td>
+                    <td style="width:5%"> : </td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['nikdinilai']->value;?>
+   </td>
+                </tr>
+                <tr>
+                  <td> Nama </td>
+                    <td> : </td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['namadinilai']->value;?>
+   </td>
+                </tr>
+                <tr>
+                  <td> Jabatan </td>
+                    <td> : </td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['jabatandinilai']->value;?>
+   </td>
+                </tr>
+                <tr>
+                  <td>Menilai</td>
+                  <td>:</td>
+                  <td> 
+                   
+                                <form name="selpen" method="post" id="form" action="ukur.php">
+                                   
+                  <select name="selpen" id="selpen" class="form-control" onchange="javascript:document.selpen.submit();">
+                                   <?php echo $_smarty_tpl->tpl_vars['option']->value;?>
 
-                                   </select>
+                                  </select>
+                                   
                                 </form>
-                                </td>
-	                    		</tr>
-	                    	</table>
-                    	</div>
-                	</div>
-                	</div>
+                              </td>
+                </tr>
+             </table>
+            </div>
+          </div>
+          
+          
+          </div>
+      
 
 
         		<div class="col-md-6">
 		            <div class="panel panel-info">
 		                <div class="panel-heading">
 	                    	<h3 class="panel-title"><i class="icon-accessibility"></i>MENILAI :
-	                    	<?php if ($_smarty_tpl->tpl_vars['jabatan_onchange']->value != '') {?>
-                      <?php echo $_smarty_tpl->tpl_vars['jabatan_onchange']->value;?>
+	                    	<?php if ($_smarty_tpl->tpl_vars['selpen']->value != '') {?>
+                      <?php echo $_smarty_tpl->tpl_vars['selpen']->value;?>
 
                       <?php } else { ?>
                       <?php echo $_smarty_tpl->tpl_vars['keterangan_menilai']->value;?>
@@ -158,158 +156,87 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
                     	</div>
                     	<div class="panel-body">
                     	
-	                    	<table>
+	                    	<?php if ($_smarty_tpl->tpl_vars['selpen']->value == 'Bawahan') {?>
+              
+              <?php if ($_smarty_tpl->tpl_vars['sign']->value == '1') {?>
+               <table class="table table-striped table-bordered table-hover" width="100%">
+                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['name'] = 'bawah';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['rsbawah']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['show']):
 
-	                    		<tr>
-	                    		<td width="12%" height="10" valign=top><b>NIK</b></td>
-                                <td width="4%" valign=top>:</td>
-                                <td width="64%" valign=top><?php if ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Bawahan') {?>
-                                   <?php if ($_smarty_tpl->tpl_vars['bawahan']->value > 1) {?>
-                                   <form name="jabatanBawahanform" method="post" id="form"  action="ukurkomp.php?action=jabatan">
-                                       <input type="hidden" name="idkompetensi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['idkompetensi']->value;?>
-"/>
-                                       <input name="idjabatan" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['jabatan_onchange']->value;?>
-"/>
-                                       <select  class="form-control input-sm" name="nikRelasiJabatan" id="jumpMenu"onchange="javascript:document.jabatanBawahanform.submit ();">                                               
-											<?php echo $_smarty_tpl->tpl_vars['bawahan_option']->value;?>
-                                          
-									   </select>
-                                   </form>
-                                   <?php } else { ?>
-                                   		<?php echo $_smarty_tpl->tpl_vars['bawahan_option']->value;?>
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['bawah']['total']);
+?>
+                <tr >
+                  <td style="width:20%"> <a href="kinerja.php?action=kinerjabawah&id=<?php echo $_smarty_tpl->tpl_vars['rsbawah']->value[$_smarty_tpl->getVariable('smarty')->value['section']['bawah']['index']]['id_karyawan'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rsbawah']->value[$_smarty_tpl->getVariable('smarty')->value['section']['bawah']['index']]['nik_karyawan'];?>
+ - <?php echo $_smarty_tpl->tpl_vars['rsbawah']->value[$_smarty_tpl->getVariable('smarty')->value['section']['bawah']['index']]['nama_karyawan'];?>
+ </a>  </td>
+                 </tr>
+                   <?php endfor; endif; ?>
+                 </table>
+              <?php } else { ?>
+               <div class="alert alert-danger">
+              <?php echo $_smarty_tpl->tpl_vars['info']->value;?>
 
-                                   <?php }?>
-                               <?php } elseif ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Atasan') {?>
-                                   <?php if ($_smarty_tpl->tpl_vars['atasan']->value > 1) {?>
-                                   <form name="jabatanAtasanform" method="post" id="form"  action="ukurkomp.php?action=jabatan">
-                                   	   <input type="hidden" name="idkompetensi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['idkompetensi']->value;?>
-"/>
-                                   	   <input name="idjabatan" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['jabatan_onchange']->value;?>
-"/>
-                                       <select class="form-control input-sm" name="nikRelasiJabatan" id="jumpMenu"onchange="javascript:document.jabatanAtasanform.submit ();" >
-                                           	<?php echo $_smarty_tpl->tpl_vars['atasan_option']->value;?>
+              </div>
+              <?php }?>
+              
+             
+            
+              
+           
+      
+            <?php } else { ?>
+              <table class="table table-striped table-bordered table-hover" width="100%">
+                <tr >
+                  <td style="width:20%"> NIK </td>
+                  <td style="width:5%"> : </td>
+                  <td><?php echo $_smarty_tpl->tpl_vars['nikpenilai']->value;?>
+</td>
+                </tr>
+                <tr>
+                  <td> Nama </td>
+                  <td> : </td>
+                  <td><?php echo $_smarty_tpl->tpl_vars['namapenilai']->value;?>
+</td>
+                </tr>
+                <tr>
+                  <td> Jabatan </td>
+                  <td> : </td>
+                  <td><?php echo $_smarty_tpl->tpl_vars['jabatanpenilai']->value;?>
+</td>
+                </tr>
+              <?php }?>
+          </table>
+              </div>
 
-                                       </select>
-                                   </form>
-                                   <?php } else { ?>
-                                   		<?php echo $_smarty_tpl->tpl_vars['atasan_option']->value;?>
-
-                                   <?php }?>
-                               <?php } elseif ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Rekan') {?>
-                                   <?php if ($_smarty_tpl->tpl_vars['rekan']->value > 1) {?>
-                                   <form name="jabatanRekanform" method="post" id="form"  action="ukurkomp.php?action=jabatan">
-                                       <input type="hidden" name="idkompetensi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['idkompetensi']->value;?>
-"/>
-                                       <input name="idjabatan" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['jabatan_onchange']->value;?>
-"/>
-                                       <select name="nikRelasiJabatan" id="jumpMenu"onchange="javascript:document.jabatanRekanform.submit ();" class="form-control input-sm">
-                                           	<?php echo $_smarty_tpl->tpl_vars['rekan_option']->value;?>
-
-                                       </select>
-                                   </form>
-                                  <?php } else { ?>
-                                      <?php echo $_smarty_tpl->tpl_vars['rekan_option']->value;?>
-
-                                   <?php }?>
-                               <?php } elseif ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Yang Bersangkutan') {?>
-                                  <?php echo $_smarty_tpl->tpl_vars['nip_dinilai']->value;?>
-
-                               <?php } else { ?>
-                                  <input type="text" class="form-control input-sm" <?php echo $_smarty_tpl->tpl_vars['nip_dinilai']->value;?>
-
-                               <?php }?>
-                               </td>
-	                    		</tr>
-	                    		<tr>
-	                    		<td width="12%" height="100"><b>Nama</b></td>
-                                <td width="4%">:</td>
-                                <td width="64%"><?php if ($_smarty_tpl->tpl_vars['name_dinilai']->value != '') {?>
-                                     	    <?php if ($_smarty_tpl->tpl_vars['jumlah']->value >= 1) {?>
-                                            	<input type="text" name="textfield2" id="textfield2" size="40" value="<?php echo $_smarty_tpl->tpl_vars['name_dinilai']->value;?>
-" disabled="disabled" class="form-control input-sm" />				
-                                            <?php } else { ?>
-                                            	<input type="text" name="textfield2" id="textfield2" size="40" disabled="disabled" class="form-control input-sm" />
-                                            <?php }?>    
-                                     	<?php } elseif ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Bawahan' || $_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Atasan' || $_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Rekan') {?>
-                                        	<input type="text" name="textfield2" id="textfield2" size="40" disabled="disabled" class="form-control input-sm" />
-                                        <?php } else { ?>
-                                        	<input type="text" name="textfield2" id="textfield2" size="40" value="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-" disabled="disabled" class="form-control input-sm" />	
-                                        <?php }?>
-									</td>
-	                    		</tr>
-	                    		
-	                    		<tr>
-	                    		<td width="12%"><b>Jabatan</b></td>
-                                <td width="4%">:</td>
-                                <td width="64%"><?php if ($_smarty_tpl->tpl_vars['name_dinilai']->value != '') {?>
-                                     <?php if ($_smarty_tpl->tpl_vars['jumlah']->value >= 1) {?>
-                                          <input type="text" name="textfield2" id="textfield2" size="40" value="<?php echo $_smarty_tpl->tpl_vars['jabatan_dinilai']->value;?>
-" disabled="disabled" class="form-control input-sm" />				
-                                     <?php } else { ?>
-                                          <input type="text" name="textfield2" id="textfield2" size="40" disabled="disabled" class="form-control input-sm" />
-                                     <?php }?>    
-                                <?php } elseif ($_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Bawahan' || $_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Atasan' || $_smarty_tpl->tpl_vars['jabatan_onchange']->value == 'Rekan') {?>
-                                   	<input type="text" name="textfield2" id="textfield2" size="40" disabled="disabled" class="form-control input-sm" />
-                                <?php } else { ?>
-                                   	<input type="text" name="textfield2" id="textfield2" size="40" value="<?php echo $_smarty_tpl->tpl_vars['jabatan']->value;?>
-" disabled="disabled" class="form-control input-sm" />	
-                                <?php }?></td>
-	                    		</tr>
-	                    		<br />
-	                    	</table>
-                    	</div>
-                    	</div>
-                    	</div>
-
-
-                    <table width="100%">       
-              <tr>
-                  <td align="center">
-                    <form method="post" action="ukur.php?action=pertanyaan">
-                        <input type="hidden" name="nikPenilai" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['nik']->value;?>
-" />
-                        
-                        <?php if ($_smarty_tpl->tpl_vars['jabatan_onchange']->value != '') {?>
-                            <input type="hidden" name="posisi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['jabatan_onchange']->value;?>
-"/>
-                        <?php } else { ?>
-                            <input type="hidden" name="posisi" id="textfield" size="40" value="Yang Bersangkutan" />
-                        <?php }?>
-                        
-                        <?php if ($_smarty_tpl->tpl_vars['nikRelasiJabatan_onchange']->value != '') {?>
-                            <input type="hidden" name="nikDinilai" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['nikRelasiJabatan_onchange']->value;?>
-" />
-                        <?php } elseif ($_smarty_tpl->tpl_vars['nikdinilai']->value != '') {?>
-                            <input type="hidden" name="nikDinilai" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['nikdinilai']->value;?>
-" />
-                        <?php } else { ?>
-                            <input type="hidden" name="nikDinilai" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['nik']->value;?>
-" />
-                        <?php }?>  
-                        <input type="hidden" name="idkompetensi" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['idkompetensi']->value;?>
-"/>
-            <input type="hidden" name="name" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-"/>
-                        <input type="hidden" name="soal" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['soal']->value;?>
-"/>
-                        <input type="hidden" name="kembali" id="textfield" size="40" value="<?php echo $_smarty_tpl->tpl_vars['kembali']->value;?>
-"/>
-                        <input name="" type="button" onClick="javascript:window.location='ukur.php?action=petunjukhard'" class="btn btn-primary" value="Cancel"/>&nbsp;&nbsp;
+           <div class="form-actions text-left">                    
+&nbsp;&nbsp;&nbsp;&nbsp;
                        <input type=submit value="MASUK KE PERTANYAAN" class="btn btn-primary" />
                         <input name="" type="hidden" value="Rekap" v/>
-                    </form>
-                    </td>
-                </tr>
-            </table>
-        </TD>
-    </TR>
+                   <INPUT TYPE="BUTTON" VALUE="Back" ONCLICK="history.go(-1)" class="btn btn-default">
 
-</TABLE>
-
-
-                	</div>
-</div>
+          </div>
+          <br />
+           </div>
 <?php }
 }
 ?>

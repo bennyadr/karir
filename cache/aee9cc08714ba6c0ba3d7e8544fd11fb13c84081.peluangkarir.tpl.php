@@ -1,5 +1,5 @@
 <?php
-/*%%SmartyHeaderCode:2105711274fec4fd7_95829812%%*/
+/*%%SmartyHeaderCode:207285711ad019eaaa8_50610434%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2105711274fec4fd7_95829812',
+  'nocache_hash' => '207285711ad019eaaa8_50610434',
   'tpl_function' => 
   array (
   ),
@@ -54,12 +54,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_571127510fc426_68274298',
+  'unifunc' => 'content_5711ad029e0197_80576583',
   'cache_lifetime' => 120,
 ),true);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_571127510fc426_68274298')) {
-function content_571127510fc426_68274298 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5711ad029e0197_80576583')) {
+function content_5711ad029e0197_80576583 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,12 +133,12 @@ function content_571127510fc426_68274298 ($_smarty_tpl) {
 		</div>
 
 		<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
-					
-			
+				
+		
 			<li class="user dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					<!--<img src="http://placehold.it/300">-->
-					<span></span>
+					<span>admin</span>
 					<i class="caret"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
@@ -161,7 +161,7 @@ function content_571127510fc426_68274298 ($_smarty_tpl) {
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="images/admin.png">
 						<div class="user-info">
-							Pengelola Website <span></span>
+							Pengelola Website <span>admin</span>
 						</div>
 					</a>
 					
@@ -228,6 +228,16 @@ function content_571127510fc426_68274298 ($_smarty_tpl) {
 			<!-- /page header -->
 			<!-- Breadcrumbs line -->
 			<!-- Info Block -->
+			
+<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.php?action=showmenu">Home</a></li>
+					 					 					 					 					 					 					 					 					 					 					 					 					 					 					 <li class="active">Peluang Karir (Jabatan)</li>					 					 					 				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+
 				<!-- /main navigation -->
 			<!-- /breadcrumbs line -->
 			<!-- Table inside panel body -->
@@ -248,7 +258,7 @@ function content_571127510fc426_68274298 ($_smarty_tpl) {
 			          <TD width="3%" Align=left> : </TD>
 			          <TD width="40%" Align=left> <select name="jabatan" onChange=submit() class="form-control" tabindex="2">
 									<option value=''>--Pilih--</option>
-																		<option value="KEPALA CABANG" >KEPALA CABANG</option>
+																		<option value="KEPALA CABANG" selected=selected>KEPALA CABANG</option>
 																		<option value="KEPALA DIVISI KEUANGAN DAN UMUM" >KEPALA DIVISI KEUANGAN DAN UMUM</option>
 																		<option value="KEPALA DIVISI PORTOFOLIO INVESTASI I" >KEPALA DIVISI PORTOFOLIO INVESTASI I</option>
 																		<option value="KEPALA SUBDIV. PENGEMBANGAN INST. & PENG. I" >KEPALA SUBDIV. PENGEMBANGAN INST. & PENG. I</option>
